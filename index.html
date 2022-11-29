@@ -1,0 +1,92 @@
+<!-- 
+    Name: Aria Siriouthay
+    Assignment: HW4
+    index.html
+    help: help websites such as w3 schools, geeksforgeeks,
+    stackoverflow, jquery doc. for help on jquery.
+    Supplied assignment readings. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HW4 pt.2</title>
+    <!-- bootstraps and css link (personal and for jquery UI) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"> 
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <h1>Multiplication Table Generator</h1>
+    <!-- main container -->
+    <div class ="container">
+        <!-- row to hold page content (form and table) -->
+        <div class="row">
+            <!-- Form to take in min/max x and y values-->
+            <div class="form-container col-sm-5"> 
+                <form class = "form-horizontal" id="form" method= "get" action="">
+                    <!-- page directions -->
+                    <p>Please use the sliders and/or the text spaces below to set the values for X and Y to create a multiplication table.</p>
+                    <p>When a table is saved, it will be stored in a tab right below this section.</p>
+                    <hr>
+                    <!-- form group to hold form elements for input fields -->
+                    <!-- each has a min of -50 and max of 50 required tag that will flag jquery validation methods on incorrect input-->
+                    <!-- min/max values for X and Y will be inputted via a range slider with two handles or a corresponding text field-->
+                    <div class="form-group">
+                        <!-- slider for y input -->
+                        <label for="y-slider">Choose the range for Y:</label>
+                        <div id="y-slider">
+                            <div id="y-min" class="ui-slider-handle"></div>
+                            <div id="y-max" class="ui-slider-handle"></div>
+                        </div>
+                        <!-- data-index will assign an index value to each input field to aid in two-way binding -->
+                        <label for="inputMinY">Minimum of Y:</label>
+                        <input type="number" class = "sliderVal" data-index = "0" id="inputMinY" name = "inputMinY" value="-50" min= "-50" max="50" required>
+                        <label for="inputMaxY">Maximum of Y:</label>
+                        <input type="number" class = "sliderVal" data-index = "1" id="inputMaxY" name = "inputMaxY" value="50" min= "-50" max="50" required>
+                    </div>
+                    <div class="form-group">
+                        <!-- slider for x input -->
+                        <label for="x-slider">Choose the range for X:</label>
+                        <div id="x-slider">
+                            <div id="x-min" class="ui-slider-handle"></div>
+                            <div id="x-max" class="ui-slider-handle"></div>
+                        </div>
+                        <label for="inputMinX">Minimum of X:</label>
+                        <input type="number" class = "sliderVal2" data-index = "0" id="inputMinX" name = "inputMinX" value="-50" min= "-50" max="50" required>
+                        <label for="inputMaxX">Maximum of X:</label>
+                        <input type="number" class = "sliderVal2" data-index = "1" id="inputMaxX" name = "inputMaxX" value="50" min= "-50" max="50" required>
+                    </div>
+                    <!-- button to save table to tab -->
+                    <div class="form-group">
+                        <label>
+                            <button class="btn btn-primary" type="button" value = "Submit" id="saveBtn" >Save</button>
+                        </label>
+                    </div>
+                </form>
+                <!-- button to delete selected tabs -->
+                <div id="tab-delete">
+                    <label>
+                        <button class="btn btn-primary" type="button" value = "Submit" id="deleteBtn" >Delete Tabs</button>
+                    </label>
+                </div>
+                <!-- section to hold tabs -->
+                <div id="myTabs">
+                    <ul></ul>
+                </div>
+            </div>
+            <!-- table container to hold multiplication table -->
+            <div class="table-container col-sm-6">
+                <table id="displayTable"></table>
+            </div>
+         </div>
+    <!-- jquery validation plug-in  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="js/validation.js"></script>
+    <!-- jquery UI components -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"> </script>
+    <script src="js/mySlider.js"></script>
+    <script src="js/myTabs.js"></script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+/*
+Name: Aria Siriouthay
+Assignment: HW4
+styles.css
+help: help websites such as w3 schools, geeksforgeeks,
+stackoverflow, jquery doc. for help on jquery.
+Supplied assignment readings.  */
+
+/* font styling for header, paragraphs,
+and label elements */
+h1, p, label{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/* main header styling */
+h1{
+    text-align: center;
+    background-color: pink;
+    color: white;
+}
+/* submit button styling;
+adding color and shadow for
+dimension */
+#saveBtn, #deleteBtn{
+    border: none;
+    background-color:pink;
+    box-shadow: 0 0 5px 1px lightgray;
+}
+/* adding style to change color when
+mouse is hovered */
+#saveBtn:hover, #deleteBtn:hover{
+    background-color: lavender;
+}
+/* hide delete button if no tabs */
+#deleteBtn{
+    display:none;
+}
+/* table styling */
+table{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-collapse: collapse;
+    font-size: smaller;
+}
+/* alternating colors for each row */
+tr:nth-child(even) 
+{
+    background-color:lavenderblush
+}
+/* targetting the table column header;
+position: sticky combined w/ top:0 allows
+for element to behave like position relative
+when element is inside viewport, otherwise
+behaves like fixed when it is outside */
+th[scope=col]{
+    background-color:lavender;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+/* targetting the table row header */
+th[scope=row]{
+    background-color:lavender;
+    color: white;
+    position: sticky;
+    left: 0;
+}
+/* adding border around table data */
+td{
+    border: 2px solid white;
+}
+/* styling table container to be scrollable
+w/ fixed height and width */
+.table-container{
+    overflow: scroll;
+    max-width: 500px;
+    max-height: 500px;
+}
+/* form styling */
+form{
+    border: 2px solid pink;
+    padding: 10px;
+}
+/* label styling */
+label{
+    margin: 10px;
+}
+/* error styling for text and border around offending input */
+.error{
+    color:red;
+}
+input.error{
+    border: 1px solid red;
+}
+label.error{
+    color: red;
+    display:block;
+}
+/* centering and resizing the default handles */
+/* https://jqueryui.com/slider/#custom-handle */
+#y-min, #y-max, #x-min, #x-max {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+}
+/* styling the sliders */
+#y-slider, #x-slider{
+   margin: auto;
+   width: 80%;
+   padding: 10px;
+}
+/* styling tab content to be scrollable */
+#myTabs{
+    overflow:scroll;
+    max-width: 500px;
+    max-height: 500px;
+    border:none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/* setting tab default color to be grey & active to be pink */
+#myTabs .ui-state-default{
+    background-color:lightgray;
+    border:none;
+}
+#myTabs .ui-state-active{
+    background-color:pink;
+    border:none;
+}
+/* repositioning the checkbox on tabs */
+/* when window is minimized the boxes
+    would appear outside of tab,
+    this fixes that */
+input[type='checkbox']{
+    float:right;
+}
+
+
+
+
